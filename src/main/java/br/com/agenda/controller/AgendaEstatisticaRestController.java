@@ -23,7 +23,7 @@ public AgendaEstatisticaRestController () {
 	@GetMapping ("/inverter")
 	public ContatoResponseDTO inverter() {
 		var estatistica = new Estatistica();
-		var msg = estatistica.inverse("Vanessa Janiszewski");
+		var msg = estatistica.reverse("Vanessa Janiszewski");
 		var response = new ContatoResponseDTO();
 		response.setMensagem(msg);
 		return response; 
@@ -33,7 +33,7 @@ public AgendaEstatisticaRestController () {
 	@GetMapping ("/inverter/completo")
 	public ContatoResponseDTO inverterCompleto() {
 		var estatistica = new Estatistica();
-		var msg = estatistica.inverse("Vanessa Janiszewski");
+		var msg = estatistica.reverse("Vanessa Janiszewski");
 		var response = new ContatoResponseDTO();
 		response.setMensagem(msg);
 		return response; 

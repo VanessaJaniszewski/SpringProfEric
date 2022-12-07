@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.agenda.dto.ContatoRequestDTO;
 import br.com.agenda.dto.ContatoResponseDTO;
-import br.com.agenda.negocio.Estatistica;
-import lombok.Data;
+import br.com.agenda.negocio.IEstatistica;
+import br.com.agenda.negocio.ImpleEstatistica;
 
 @RestController
 @RequestMapping("/agenda")
 public class AgendaRestController {
 	
 	@Autowired
-	private Estatistica estatistica;
+	private ImpleEstatistica estatistica;
 
 	@PostMapping("/cadastrar")
 	public ContatoResponseDTO cadastrar(@RequestBody ContatoRequestDTO request) {
@@ -37,14 +37,14 @@ public class AgendaRestController {
 	@GetMapping("/inverter")
 	public ContatoResponseDTO inverter() {
 	ContatoResponseDTO response = new ContatoResponseDTO();
-	var msg = estatistica.inverse("Deu certoooo");
+	var msg = estatistica.reverse("Testeeeee");
 	response.setMensagem(msg);
 	return response;
 	}
 	
 	@GetMapping ("/inverter/completo")
 	public ContatoResponseDTO inverterCompleto() {
-		var msg = estatistica.inverse("Vanessa Janiszewski");
+		var msg = estatistica.reverse("Vanessa Janiszewski");
 		var response = new ContatoResponseDTO();
 		response.setMensagem(msg+ " Numero de chars: "+msg.length());
 		return response; 

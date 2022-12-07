@@ -1,16 +1,19 @@
 package br.com.agenda.negocio;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
-public class Estatistica {
+@Service
+public class Estatistica implements ImpleEstatistica{
 
 	public Estatistica() {
 		System.out.println("--- Construtos de Estatística iniciado ---");
 	}
+
+	@Override
+	public String reverse(String string) {
+		return new StringBuilder(string).reverse().toString();	
+		}
 	
-	
-	public String inverse(String String) {
-	return new StringBuilder(String).reverse().toString();	
-	}
+
+
 }

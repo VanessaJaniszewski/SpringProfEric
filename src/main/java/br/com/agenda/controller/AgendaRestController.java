@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.agenda.dto.ContatoRequestDTO;
 import br.com.agenda.dto.ContatoResponseDTO;
-import br.com.agenda.negocio.IEstatistica;
 import br.com.agenda.negocio.ImpleEstatistica;
 
 @RestController

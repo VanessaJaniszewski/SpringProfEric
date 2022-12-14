@@ -15,8 +15,14 @@ import br.com.agenda.negocio.ImpleEstatistica;
 @RequestMapping("/agenda")
 public class AgendaRestController {
 	
-	@Autowired
-	private ImpleEstatistica estatistica;
+	
+	private final ImpleEstatistica estatistica;
+	
+	@Autowired //o autowired aqui é opcional
+	public AgendaRestController(ImpleEstatistica estatistica) {
+		this.estatistica = estatistica;
+	}
+	
 
 	@PostMapping("/cadastrar")
 	public ContatoResponseDTO cadastrar(@RequestBody ContatoRequestDTO request) {

@@ -2,11 +2,12 @@ package br.com.agenda.negocio;
 
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class Estatistica implements ImpleEstatistica{
 
 	public Estatistica() {
-		System.out.println("--- Construtos de Estatística iniciado ---");
+		System.out.println("USOU PRIMEIRO METODO");
 	}
 
 	@Override

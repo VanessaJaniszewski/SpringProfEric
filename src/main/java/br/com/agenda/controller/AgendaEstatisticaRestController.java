@@ -11,7 +11,7 @@ import br.com.agenda.dto.ContatoResponseDTO;
 import br.com.agenda.negocio.Estatistica;
 
 @RestController
-@RequestMapping("/agenda/estatistica")
+@RequestMapping("/estatistica")
 public class AgendaEstatisticaRestController {
 	
 public AgendaEstatisticaRestController () {
@@ -35,7 +35,7 @@ public AgendaEstatisticaRestController () {
 		var estatistica = new Estatistica();
 		var msg = estatistica.reverse("Vanessa Janiszewski");
 		var response = new ContatoResponseDTO();
-		response.setMensagem(msg);
+		response.setMensagem(msg+" Dígitos: "+msg.length());
 		return response; 
 	}
 	

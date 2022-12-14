@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
@@ -11,13 +12,15 @@ import org.springframework.stereotype.Service;
 import br.com.agenda.dto.ContatoRequestDTO;
 import br.com.contatoFuctura.service.IContatoService;
 import br.com.contatoFuctura.service.Save;
+import br.com.repository.ContatoRepository;
 
 @Primary
 @Service
 @Qualifier("IContatoServiceAWSImpl")
 public class IContatoServiceAWSImpl implements IContatoService{
 
-	
+	@Autowired
+	private ContatoRepository repository;
 	private List<ContatoRequestDTO> contatos;
 	
 	public IContatoServiceAWSImpl() {
@@ -32,6 +35,7 @@ public class IContatoServiceAWSImpl implements IContatoService{
 		System.out.println(contatos.get(0).getAltura());
 		System.out.println(contatos.get(0).getIdade());
 		Save save = new Save();
+		repository.save(contato);
 		try {
 			save.write("Nome: "+contatos.get(0).getNome());
 			save.write("Altura: "+contatos.get(0).getAltura().toString());

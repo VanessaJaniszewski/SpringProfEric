@@ -1,4 +1,3 @@
-
-Nome: Vanessa
-Altura: 1.6
-Idade: 34
+Nome: Ted
+Altura: 0.2
+Idade: 2
